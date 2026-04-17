@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta
+		name="description"
+		content="Shop smart at our ecommerce store for online shopping deals on electronics, fashion, home essentials, and beauty products with fast delivery and secure checkout."
+	/>
+	<meta
+		name="keywords"
+		content="ecommerce, online shopping, best deals, fast delivery, secure checkout, electronics, fashion, home essentials, beauty products"
+	/>
+	<title>ShopNest | Ecommerce Landing Page</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
+		rel="stylesheet"
+	/>
+
+	<style>
+		:root {
+			--bg: #fff8ef;
+			--ink: #19150f;
+			--muted: #5c4f40;
+			--brand: #e75f2a;
+			--brand-deep: #b64018;
+			--accent: #0f9b8e;
+			--surface: #fffdf8;
+			--line: #ead8bf;
+			--radius: 20px;
+			--shadow: 0 20px 40px rgba(25, 21, 15, 0.1);
+			--max: 1120px;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Space Grotesk", sans-serif;
+			color: var(--ink);
+			background:
+				radial-gradient(circle at 10% 15%, #ffd8b8 0%, transparent 35%),
+				radial-gradient(circle at 85% 20%, #d5fff8 0%, transparent 35%),
+				linear-gradient(180deg, #fff8ef 0%, #fff3e1 100%);
+			min-height: 100vh;
+			line-height: 1.6;
+		}
+
+		.shell {
+			max-width: var(--max);
+			margin: 0 auto;
+			padding: 24px;
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			padding: 8px 0 20px;
+			animation: slideDown 700ms ease-out both;
+		}
+
+		.logo {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-family: "Fraunces", serif;
+			font-size: 1.35rem;
+			font-weight: 700;
+		}
+
+		.logo-mark {
+			width: 38px;
+			height: 38px;
+			border-radius: 11px;
+			background: linear-gradient(145deg, var(--brand), #ff9b5f);
+			display: grid;
+			place-items: center;
+			color: white;
+			font-weight: 700;
+			box-shadow: 0 10px 20px rgba(231, 95, 42, 0.35);
+		}
+
+		nav {
+			display: flex;
+			gap: 20px;
+			align-items: center;
+			color: var(--muted);
+			font-weight: 500;
+		}
+
+		nav a {
+			text-decoration: none;
+			color: inherit;
+			transition: color 0.2s ease;
+		}
+
+		nav a:hover {
+			color: var(--brand-deep);
+		}
+
+		.btn {
+			border: none;
+			border-radius: 999px;
+			padding: 11px 18px;
+			font: inherit;
+			cursor: pointer;
+			font-weight: 700;
+			transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+		}
+
+		.btn:active {
+			transform: translateY(1px);
+		}
+
+		.btn-primary {
+			background: var(--brand);
+			color: #fff;
+			box-shadow: 0 10px 20px rgba(231, 95, 42, 0.28);
+		}
+
+		.btn-primary:hover {
+			background: var(--brand-deep);
+			transform: translateY(-2px);
+		}
+
+		.hero {
+			display: grid;
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: 26px;
+			align-items: stretch;
+			margin-top: 10px;
+		}
+
+		.hero-copy,
+		.hero-card {
+			border: 1px solid var(--line);
+			background: rgba(255, 253, 248, 0.8);
+			backdrop-filter: blur(6px);
+			border-radius: var(--radius);
+			box-shadow: var(--shadow);
+			padding: clamp(22px, 3vw, 34px);
+		}
+
+		.hero-copy {
+			animation: revealUp 900ms ease both;
+		}
+
+		.eyebrow {
+			font-size: 0.84rem;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--accent);
+			font-weight: 700;
+			margin-bottom: 14px;
+		}
+
+		h1 {
+			font-family: "Fraunces", serif;
+			font-size: clamp(2.1rem, 5vw, 3.8rem);
+			line-height: 1.08;
+			margin-bottom: 14px;
+		}
+
+		.lead {
+			color: var(--muted);
+			max-width: 58ch;
+			margin-bottom: 24px;
+		}
+
+		.hero-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+			margin-bottom: 22px;
+		}
+
+		.btn-ghost {
+			background: transparent;
+			color: var(--ink);
+			border: 1px solid var(--line);
+		}
+
+		.btn-ghost:hover {
+			background: #fff;
+			transform: translateY(-2px);
+		}
+
+		.chips {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+
+		.chip {
+			border: 1px solid var(--line);
+			border-radius: 999px;
+			padding: 6px 11px;
+			font-size: 0.86rem;
+			color: #4f4234;
+			background: #fff;
+		}
+
+		.hero-card {
+			display: grid;
+			gap: 14px;
+			align-content: start;
+			animation: revealUp 900ms 120ms ease both;
+		}
+
+		.offer {
+			background: linear-gradient(140deg, #13110f 0%, #2d261f 100%);
+			color: #fff;
+			border-radius: 16px;
+			padding: 20px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.offer::after {
+			content: "";
+			position: absolute;
+			width: 130px;
+			height: 130px;
+			right: -20px;
+			top: -20px;
+			border-radius: 50%;
+			background: radial-gradient(circle, rgba(231, 95, 42, 0.55) 0%, transparent 65%);
+		}
+
+		.offer strong {
+			display: block;
+			font-size: 1.55rem;
+			margin: 6px 0;
+		}
+
+		.stats {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 10px;
+		}
+
+		.stat {
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			padding: 12px;
+			background: #fff;
+		}
+
+		.stat b {
+			font-size: 1.1rem;
+			display: block;
+		}
+
+		.features {
+			margin-top: 28px;
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 14px;
+		}
+
+		.feature {
+			border: 1px solid var(--line);
+			background: rgba(255, 255, 255, 0.75);
+			border-radius: 14px;
+			padding: 15px;
+			opacity: 0;
+			transform: translateY(16px);
+			animation: stagger 700ms ease forwards;
+		}
+
+		.feature:nth-child(1) { animation-delay: 180ms; }
+		.feature:nth-child(2) { animation-delay: 320ms; }
+		.feature:nth-child(3) { animation-delay: 460ms; }
+
+		.feature h3 {
+			margin-bottom: 4px;
+			font-size: 1rem;
+		}
+
+		.feature p {
+			color: var(--muted);
+			font-size: 0.92rem;
+		}
+
+		footer {
+			margin: 30px 0 10px;
+			color: var(--muted);
+			font-size: 0.9rem;
+			text-align: center;
+		}
+
+		@keyframes revealUp {
+			from {
+				opacity: 0;
+				transform: translateY(24px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes slideDown {
+			from {
+				opacity: 0;
+				transform: translateY(-18px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes stagger {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@media (max-width: 920px) {
+			.hero {
+				grid-template-columns: 1fr;
+			}
+
+			.features {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (max-width: 700px) {
+			.shell {
+				padding: 16px;
+			}
+
+			header {
+				flex-wrap: wrap;
+			}
+
+			nav {
+				width: 100%;
+				justify-content: space-between;
+			}
+
+			nav .hide-mobile {
+				display: none;
+			}
+
+			.stats {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="shell">
+		<header>
+			<div class="logo">
+				<span class="logo-mark">S</span>
+				<span>ShopNest</span>
+			</div>
+			<nav>
+				<a href="#">Categories</a>
+				<a href="#" class="hide-mobile">New Arrivals</a>
+				<a href="#" class="hide-mobile">Top Deals</a>
+				<button class="btn btn-primary">Start Shopping</button>
+			</nav>
+		</header>
+
+		<main class="hero">
+			<section class="hero-copy">
+				<p class="eyebrow">Online Shopping Made Better</p>
+				<h1>Your Favorite Ecommerce Store For Everyday Best Deals</h1>
+				<p class="lead">
+					Discover electronics, fashion, home essentials, and beauty products at prices you will love.
+					Enjoy fast delivery, secure checkout, and trusted quality in one ecommerce destination.
+				</p>
+				<div class="hero-actions">
+					<button class="btn btn-primary">Shop Best Deals</button>
+					<button class="btn btn-ghost">Explore Categories</button>
+				</div>
+				<div class="chips" aria-label="keyword tags">
+					<span class="chip">ecommerce</span>
+					<span class="chip">online shopping</span>
+					<span class="chip">best deals</span>
+					<span class="chip">fast delivery</span>
+					<span class="chip">secure checkout</span>
+				</div>
+			</section>
+
+			<aside class="hero-card" aria-label="Promotional highlights">
+				<div class="offer">
+					<small>Limited Time Offer</small>
+					<strong>Up to 60% Off</strong>
+					<p>Save big on trending fashion, premium gadgets, and smart home essentials.</p>
+				</div>
+
+				<div class="stats">
+					<article class="stat">
+						<b>2M+</b>
+						<span>Happy shoppers</span>
+					</article>
+					<article class="stat">
+						<b>24h</b>
+						<span>Express dispatch</span>
+					</article>
+					<article class="stat">
+						<b>4.9</b>
+						<span>Average rating</span>
+					</article>
+				</div>
+			</aside>
+		</main>
+
+		<section class="features" aria-label="Why choose us">
+			<article class="feature">
+				<h3>Fast Delivery</h3>
+				<p>Get your online shopping orders quickly with reliable shipping to your doorstep.</p>
+			</article>
+			<article class="feature">
+				<h3>Secure Checkout</h3>
+				<p>Shop confidently with protected payments and encrypted checkout on every order.</p>
+			</article>
+			<article class="feature">
+				<h3>Top Product Range</h3>
+				<p>Browse electronics, fashion, home essentials, and beauty products in one place.</p>
+			</article>
+		</section>
+
+		<footer>
+			<p>ShopNest Ecommerce - Your trusted online shopping partner.</p>
+		</footer>
+	</div>
+</body>
+</html>
